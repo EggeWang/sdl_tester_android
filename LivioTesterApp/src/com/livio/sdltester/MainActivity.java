@@ -1296,6 +1296,7 @@ public class MainActivity extends Activity{
 			sendMessageToService(Message.obtain(null, SdlService.ServiceMessages.DISCONNECT));
 			return true;
 		case R.id.menu_reset:
+            artworkSet = false;
 			sendMessageToService(Message.obtain(null, SdlService.ServiceMessages.RESET));
 			return true;
 		case R.id.menu_clear_list:
