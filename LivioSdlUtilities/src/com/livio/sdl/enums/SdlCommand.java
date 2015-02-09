@@ -204,6 +204,8 @@ public enum SdlCommand{
 	//UPDATE_TURN_LIST ("Update Turn List"), //TODO - this command doesn't work on SDL core as of 1/23/2014
 	//DIAL_NUMBER ("Dial Number"), //TODO - this command doesn't work on SDL core as of 1/23/2014
 	
+	SET_DISPLAY_LAYOUT("Set Display Layout"),
+	
 	//Future commands go here.
 	
 	;

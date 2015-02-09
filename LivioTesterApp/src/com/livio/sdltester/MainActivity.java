@@ -60,6 +60,7 @@ import com.livio.sdltester.dialogs.DeleteCommandDialog;
 import com.livio.sdltester.dialogs.DeleteFileDialog;
 import com.livio.sdltester.dialogs.DeleteInteractionDialog;
 import com.livio.sdltester.dialogs.DeleteSubmenuDialog;
+import com.livio.sdltester.dialogs.DisplayLayoutDialog;
 import com.livio.sdltester.dialogs.GetDtcsDialog;
 import com.livio.sdltester.dialogs.PerformInteractionDialog;
 import com.livio.sdltester.dialogs.PutFileDialog;
@@ -1011,6 +1012,31 @@ public class MainActivity extends Activity{
 			// that list here and we'll actually show the dialog when it gets returned by the service.  See onPutFileListReceived().
 			sendPutFileRequest(ResultCodes.PutFileResult.SET_APP_ICON);
 			break;
+		case SET_DISPLAY_LAYOUT:
+		    createSetDisplayLayoutDialog(Arrays.<String>asList(new String[]{
+		            "DEFAULT",
+		            "MEDIA",
+		            "NON-MEDIA",
+		            "ONSCREEN_PRESETS",
+		            "NAV_FULLSCREEN_MAP",
+		            "NAV_LIST",
+		            "NAV_KEYBOARD",
+		            "TILES_ONLY",
+		            "TEXTBUTTONS_ONLY",
+		            "GRAPHIC_WITH_TILES",
+		            "TILES_WITH_GRAPHIC",
+		            "GRAPHIC_WITH_TEXT_AND_SOFTBUTTONS",
+		            "TEXT_AND_SOFTBUTTONS_WITH_GRAPHIC",
+		            "GRAPHIC_WITH_TEXTBUTTONS",
+		            "TEXTBUTTONS_WITH_GRAPHIC",
+		            "LARGE_GRAPHIC_WITH_SOFTBUTTONS",
+		            "DOUBLE_GRAPHIC_WITH_SOFTBUTTONS",
+		            "LARGE_GRAPHIC_ONLY",
+		            "TEXT_WITH_GRAPHIC",
+		            "GRAPHIC_WITH_TEXT",
+		            
+		    }));
+		    break;
 		default:
 			break;
 		}
@@ -1246,6 +1272,13 @@ public class MainActivity extends Activity{
 		BaseAlertDialog deleteFileDialog = new DeleteFileDialog(this, imagesAddedSoFar);
 		deleteFileDialog.setListener(multipleMessageListener);
 		deleteFileDialog.show();
+	}
+	
+	private void createSetDisplayLayoutDialog(List<String> displayLayouts){
+	    Collections.sort(displayLayouts);
+	    BaseAlertDialog displayLayoutDialog = new DisplayLayoutDialog(this, displayLayouts);
+	    displayLayoutDialog.setListener(singleMessageListener);
+	    displayLayoutDialog.show();
 	}
 	
 	/**
