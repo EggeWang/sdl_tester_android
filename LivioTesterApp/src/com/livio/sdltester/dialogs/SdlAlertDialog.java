@@ -141,15 +141,6 @@ public class SdlAlertDialog extends BaseOkCancelDialog implements OnSeekBarChang
 			if(textToSpeak.equals("")){
 				textToSpeak = null;
 			}
-			if(line1.equals("")){
-				line1 = " ";
-			}
-			if(line2.equals("")){
-				line2 = " ";
-			}
-			if(line3.equals("")){
-				line3 = " ";
-			}
 			
 			Alert result = (Alert) SdlRequestFactory.alert(textToSpeak, line1, line2, line3, playTone, toneDurationInMs);
 			if(softButtons != null && softButtons.size() > 0){

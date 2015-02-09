@@ -56,8 +56,8 @@ public final class SdlUtils {
 	public static String getJsonString(RPCMessage msg, int numOfIndents){
 		String result = "";
 		try {
-			JSONObject json = msg.serializeJSON();
-//			JSONObject json = msg.getJsonMapping(1); // TODO: set actual JSON version.
+//			JSONObject json = msg.serializeJSON();
+			JSONObject json = msg.toJson(1); // TODO: set actual JSON version.
 			result = json.toString(numOfIndents);
 		} catch (JSONException e) {
 			e.printStackTrace();

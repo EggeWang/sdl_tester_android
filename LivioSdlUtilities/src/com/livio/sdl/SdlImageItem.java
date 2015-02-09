@@ -56,7 +56,7 @@ public class SdlImageItem {
 		Image image = new Image();
 		image.setImageType(ImageType.DYNAMIC);
 		image.setValue(imageName);
-		image.setBulkData(AndroidUtils.bitmapToRawBytes(bitmap, format));
+//		image.setBulkData(AndroidUtils.bitmapToRawBytes(bitmap, format));
 		
 		return image;
 	}

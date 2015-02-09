@@ -149,6 +149,10 @@ public enum SdlButton {
 	 * @return The appropriate SdlButton for the input
 	 */
 	public static SdlButton translateFromLegacy(ButtonName legacyButton){
+	    if(legacyButton == null){
+	        return null;
+	    }
+	    
 		switch(legacyButton){
 		case OK:
 			return OK;
