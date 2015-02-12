@@ -13,5 +13,12 @@
 			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content"
 			android:inputType="textCapWords" />
+
+        <EditText android:id="@+id/et_addSubMenu_position"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:freezesText="true"
+            android:inputType="number"
+            android:hint="@string/position_hint"/>
 		
 </LinearLayout>

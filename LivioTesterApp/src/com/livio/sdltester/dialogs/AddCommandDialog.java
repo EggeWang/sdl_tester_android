@@ -33,6 +33,7 @@ public class AddCommandDialog extends BaseOkCancelDialog{
 	private EditText et_newCommand;
 	private EditText et_voiceRecKeyword;
 	private EditText et_imageName;
+	private EditText et_position;
 	
 	private Spinner spin_addCommand_submenus;
 	private CheckBox cb_image;
@@ -87,6 +88,7 @@ public class AddCommandDialog extends BaseOkCancelDialog{
 		et_newCommand = (EditText) parent.findViewById(R.id.et_addCommand_commandName);
 		et_voiceRecKeyword = (EditText) parent.findViewById(R.id.et_addCommand_voiceRecKeyword);
 		et_imageName = (EditText) parent.findViewById(R.id.et_imageName);
+		et_position = (EditText) parent.findViewById(R.id.et_addCommand_position);
 		spin_addCommand_submenus = (Spinner) parent.findViewById(R.id.spin_addCommand_submenus);
 		cb_image = (CheckBox) parent.findViewById(R.id.check_enable_image);
 	}
@@ -98,7 +100,11 @@ public class AddCommandDialog extends BaseOkCancelDialog{
 			if(listener != null){
 				// grab the data from the views
 				final String commandName = et_newCommand.getText().toString();
-				final int position = SdlConstants.AddCommandConstants.DEFAULT_POSITION;
+				int position = SdlConstants.AddCommandConstants.DEFAULT_POSITION;
+				String positionStr = et_position.getText().toString().trim();
+				if( ! "".equals(positionStr)){
+				    Integer.parseInt(positionStr);
+				}
 				final String voiceRecKeyword   = et_voiceRecKeyword.getText().toString();
 				final MenuItem parentBank = (MenuItem) spin_addCommand_submenus.getSelectedItem();
 				final int parentId = (parentBank != null) ? parentBank.getId() : SdlConstants.AddCommandConstants.INVALID_PARENT_ID;

@@ -18,7 +18,7 @@ public class AddSubMenuDialog extends BaseOkCancelDialog{
 	private static final SdlCommand SYNC_COMMAND = SdlCommand.ADD_SUBMENU;
 	private static final String DIALOG_TITLE = SYNC_COMMAND.toString();
 	
-	private EditText et_submenuName;
+	private EditText et_submenuName, et_position;
 	
 	public AddSubMenuDialog(Context context) {
 		super(context, DIALOG_TITLE, R.layout.add_submenu);
@@ -29,6 +29,7 @@ public class AddSubMenuDialog extends BaseOkCancelDialog{
 	@Override
 	protected void findViews(View parent) {
 		et_submenuName = (EditText) view.findViewById(R.id.et_addSubMenu_subMenuName);
+		et_position = (EditText) view.findViewById(R.id.et_addSubMenu_position);
 	}
 	
 	//dialog button click listeners
@@ -37,7 +38,11 @@ public class AddSubMenuDialog extends BaseOkCancelDialog{
 		@Override
 		public void onClick(DialogInterface dialog, int which) {
 			final String submenuName = et_submenuName.getText().toString();
-			final int position = SdlConstants.AddSubmenuConstants.DEFAULT_POSITION;
+			int position = SdlConstants.AddSubmenuConstants.DEFAULT_POSITION;
+			String positionStr = et_position.getText().toString().trim();
+			if( ! "".equals(positionStr) ){
+			    position = Integer.parseInt(positionStr);
+			}
 			
 			// all we need is a valid name
 			if(submenuName.length() > 0){

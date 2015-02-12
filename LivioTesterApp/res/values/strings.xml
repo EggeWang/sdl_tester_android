@@ -74,5 +74,7 @@
     <string name="keyboard_props_keyboard_layout_menu">Keyboard Layout</string>
     <string name="keyboard_props_language_menu">Language</string>
     <string name="menu_name_hint">Name</string>
+    
+    <string name="position_hint">Position</string>
 
 </resources>

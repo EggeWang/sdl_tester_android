@@ -16,12 +16,19 @@
 		    android:inputType="textCapWords"
 		    android:hint="@string/add_command_command_name"/>
 
-		<EditText android:id="@+id/et_addCommand_voiceRecKeyword"
-		    android:layout_width="fill_parent"
-		    android:layout_height="wrap_content"
-		    android:freezesText="true"
-		    android:inputType="textCapSentences"
-		    android:hint="@string/add_command_vr_keyword"/>
+        <EditText android:id="@+id/et_addCommand_voiceRecKeyword"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:freezesText="true"
+            android:inputType="textCapSentences"
+            android:hint="@string/add_command_vr_keyword"/>
+
+        <EditText android:id="@+id/et_addCommand_position"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:freezesText="true"
+            android:inputType="number"
+            android:hint="@string/position_hint"/>
 
 		<TextView
             style="@style/small_header_text"
