@@ -39,14 +39,22 @@
 			android:freezesText="true"
 	        android:inputType="textCapWords"
 	        android:hint="@string/alert_line3"/>
-		
-	    <CheckBox android:id="@+id/check_alert_playTone"
-	        android:layout_height="wrap_content"
-	        android:layout_width="wrap_content"
-	        android:layout_gravity="left"
-	        android:text="@string/alert_sound_enabled"
-	        android:checked="true"
-	        />
+        
+        <CheckBox android:id="@+id/check_alert_playTone"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/alert_sound_enabled"
+            android:checked="true"
+            />
+        
+        <CheckBox android:id="@+id/check_alert_progressIndicator"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/progress_indicator_enabled"
+            android:checked="false"
+            />
 	    
 	    <CheckBox android:id="@+id/cb_include_softbuttons"
 	        android:layout_width="fill_parent"

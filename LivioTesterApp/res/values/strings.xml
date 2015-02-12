@@ -76,5 +76,6 @@
     <string name="menu_name_hint">Name</string>
     
     <string name="position_hint">Position</string>
+    <string name="progress_indicator_enabled">Progress indicator enabled</string>
 
 </resources>

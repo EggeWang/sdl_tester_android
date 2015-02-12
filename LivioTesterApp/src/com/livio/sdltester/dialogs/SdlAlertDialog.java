@@ -49,7 +49,7 @@ public class SdlAlertDialog extends BaseOkCancelDialog implements OnSeekBarChang
 	
 	private TextView tv_alert_toneDuration;
 	
-	private CheckBox check_alert_playTone, check_softButtons;
+	private CheckBox check_alert_playTone, check_softButtons, check_progressIndicator;
 	
 	private SeekBar seek_alert_toneDuration;
 	private SeekBarCalculator progressCalculator;
@@ -108,6 +108,7 @@ public class SdlAlertDialog extends BaseOkCancelDialog implements OnSeekBarChang
 		
 		check_alert_playTone = (CheckBox) view.findViewById(R.id.check_alert_playTone);
 		check_softButtons = (CheckBox) view.findViewById(R.id.cb_include_softbuttons);
+		check_progressIndicator = (CheckBox) view.findViewById(R.id.check_alert_progressIndicator);
 		
 		//make initial updates to the UI using default values
 		updateProgressText(DEFAULT_TONE_DURATION);
@@ -137,6 +138,7 @@ public class SdlAlertDialog extends BaseOkCancelDialog implements OnSeekBarChang
 			int toneDurationInS = (int) progressCalculator.calculateValue(seek_alert_toneDuration.getProgress());
 			int toneDurationInMs = MathUtils.convertSecsToMillisecs(toneDurationInS);
 			boolean playTone = check_alert_playTone.isChecked();
+			boolean progressIndicator = check_progressIndicator.isChecked();
 			
 			if(textToSpeak.equals("")){
 				textToSpeak = null;
@@ -152,6 +154,7 @@ public class SdlAlertDialog extends BaseOkCancelDialog implements OnSeekBarChang
 			}
 			
 			Alert result = (Alert) SdlRequestFactory.alert(textToSpeak, line1, line2, line3, playTone, toneDurationInMs);
+			result.setProgressIndicator(progressIndicator);
 			if(softButtons != null && softButtons.size() > 0){
 			    result.setSoftButtons(new Vector<SoftButton>(softButtons));
 			}
