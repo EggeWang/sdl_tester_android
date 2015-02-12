@@ -1,5 +1,6 @@
 package com.livio.sdl.utils;
 
+import java.util.List;
 import java.util.Vector;
 
 /**
@@ -62,5 +63,22 @@ public final class StringUtils {
 		}
 		
 		return result;
+	}
+	
+	/**
+	 * Converts a string list into a single, comma-separated string.
+	 * 
+	 * @param strList The list to convert
+	 * @return The resultant CSV string
+	 */
+	public static String stringListToCsv(List<String> strList){
+	    String result = "";
+	    
+	    for(String str : strList){
+	        result += str + ",";
+	    }
+	    
+	    // remove trailing comma prior to return
+	    return result.substring(0, result.length()-1);
 	}
 }

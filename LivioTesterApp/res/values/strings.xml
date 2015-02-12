@@ -58,5 +58,21 @@
     <string name="title_activity_help">HelpActivity</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    
+    <!-- TTS Chunks -->
+    <string name="tts_text_hint">Enter text here</string>
+    
+    <!-- Set Global Properties -->
+    <string name="edit_timeout_prompt">Edit Timeout Prompt</string>
+    <string name="edit_help_prompt">Edit Help Prompt</string>
+    <string name="edit_menu_button">Edit Menu Button</string>
+    <string name="edit_vr_help">Edit VR Help</string>
+    <string name="edit_keyboard_properties">Edit Keyboard Properties</string>
+    <string name="limited_char_list_hint">Limited char list (CSV)</string>
+    <string name="autocomplete_text">Autocomplete text</string>
+    <string name="keyboard_props_keypress_mode_menu">Keypress Mode</string>
+    <string name="keyboard_props_keyboard_layout_menu">Keyboard Layout</string>
+    <string name="keyboard_props_language_menu">Language</string>
+    <string name="menu_name_hint">Name</string>
 
 </resources>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:paddingLeft="20dip" 
+    android:paddingRight="20dip" 
+    android:layout_marginLeft="10dip" 
+    android:layout_marginRight="10dip" >
+    
+    <EditText
+        android:id="@+id/et_limited_char_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textCapWords"
+        android:hint="@string/limited_char_list_hint" 
+        />
+    
+    <EditText
+        android:id="@+id/et_autocomplete_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textCapWords"
+        android:hint="@string/autocomplete_text" 
+        />
+
+    <TextView
+        style="@style/small_header_text"
+        android:text="@string/keyboard_props_keypress_mode_menu"/>
+    
+    <Spinner android:id="@+id/spin_keypressMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        style="@style/small_header_text"
+        android:text="@string/keyboard_props_keyboard_layout_menu"/>
+    
+    <Spinner android:id="@+id/spin_keyboardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        style="@style/small_header_text"
+        android:text="@string/keyboard_props_language_menu"/>
+    
+    <Spinner android:id="@+id/spin_language"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
+    
+
+</LinearLayout>

@@ -69,6 +69,7 @@ import com.livio.sdltester.dialogs.ScrollableMessageDialog;
 import com.livio.sdltester.dialogs.SdlAlertDialog;
 import com.livio.sdltester.dialogs.SdlConnectionDialog;
 import com.livio.sdltester.dialogs.SetAppIconDialog;
+import com.livio.sdltester.dialogs.SetGlobalPropertiesDialog;
 import com.livio.sdltester.dialogs.SetMediaClockTimerDialog;
 import com.livio.sdltester.dialogs.ShowDialog;
 import com.livio.sdltester.dialogs.SliderDialog;
@@ -115,6 +116,7 @@ public class MainActivity extends Activity{
 			private static final int SHOW = 5;
 			private static final int SCROLLABLE_MESSAGE = 6;
 			private static final int ALERT = 7;
+			private static final int SET_GLOBAL_PROPERTIES = 8;
 		}
 	}
 	
@@ -731,6 +733,10 @@ public class MainActivity extends Activity{
 		    availableItems = filterUnaddedItems(putFileList);
 		    createAlertDialog(availableItems);
 		    break;
+		case ResultCodes.PutFileResult.SET_GLOBAL_PROPERTIES:
+		    availableItems = filterUnaddedItems(putFileList);
+		    createSetGlobalPropertiesDialog(availableItems);
+		    break;
 		default:
 			break;
 		}
@@ -1037,6 +1043,11 @@ public class MainActivity extends Activity{
 		            
 		    }));
 		    break;
+		case SET_GLOBAL_PROPERTIES:
+            // the scrollable message dialog needs a list of images that have been added so far, so let's request
+            // that list here and we'll actually show the dialog when it gets returned by the service.  See onPutFileListReceived().
+            sendPutFileRequest(ResultCodes.PutFileResult.SET_GLOBAL_PROPERTIES);
+		    break;
 		default:
 			break;
 		}
@@ -1279,6 +1290,12 @@ public class MainActivity extends Activity{
 	    BaseAlertDialog displayLayoutDialog = new DisplayLayoutDialog(this, displayLayouts);
 	    displayLayoutDialog.setListener(singleMessageListener);
 	    displayLayoutDialog.show();
+	}
+	
+	private void createSetGlobalPropertiesDialog(List<SdlImageItem> imagesAddedSoFar){
+	    BaseAlertDialog setGlobalPropertiesDialog = new SetGlobalPropertiesDialog(this, imagesAddedSoFar);
+	    setGlobalPropertiesDialog.setListener(singleMessageListener);
+	    setGlobalPropertiesDialog.show();
 	}
 	
 	/**

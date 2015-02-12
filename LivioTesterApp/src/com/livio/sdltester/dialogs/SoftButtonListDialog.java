@@ -44,7 +44,7 @@ public class SoftButtonListDialog extends BaseOkCancelDialog{
     private List<SdlImageItem> allImages;
     
     public SoftButtonListDialog(Context context, List<SdlImageItem> images){
-        super(context, DIALOG_TITLE, R.layout.create_choice_interaction_set);
+        super(context, DIALOG_TITLE, R.layout.list_add_items);
         setPositiveButton(okButtonListener);
         adapter = new SdlImageAdapter(context, adapterList);
         lv_softButtonItems.setAdapter(adapter);

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:paddingLeft="20dip" 
+    android:paddingRight="20dip" 
+    android:layout_marginLeft="10dip" 
+    android:layout_marginRight="10dip" >
+
+    <Button android:id="@+id/but_editTimeoutPrompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_timeout_prompt" 
+        />
+    
+    <Button android:id="@+id/but_editHelpPrompt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_help_prompt" 
+        />
+
+    <Button android:id="@+id/but_editMenuButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_menu_button" 
+        />
+
+    <Button android:id="@+id/but_editVrHelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_vr_help" 
+        />
+
+    <Button android:id="@+id/but_editKeyboardProperties"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/edit_keyboard_properties" 
+        />
+
+</LinearLayout>

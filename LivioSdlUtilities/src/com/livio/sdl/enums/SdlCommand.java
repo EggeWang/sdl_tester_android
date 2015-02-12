@@ -205,6 +205,7 @@ public enum SdlCommand{
 	//DIAL_NUMBER ("Dial Number"), //TODO - this command doesn't work on SDL core as of 1/23/2014
 	
 	SET_DISPLAY_LAYOUT("Set Display Layout"),
+	SET_GLOBAL_PROPERTIES("Set Global Properties"),
 	
 	//Future commands go here.
 	

@@ -468,9 +468,9 @@ public class SdlService extends Service implements IProxyListenerALM{
 				public void onRequestTimedOut() {
 					if(isConnected && !offlineMode){
 						// if any sdl request times out, we will assume we disconnected.
-						showToast("A request timed out.  You may need to re-start SDL core.");
-						Message msg = Message.obtain(null, ClientMessages.SDL_DISCONNECTED);
-						sendMessageToRegisteredClients(msg);
+//						showToast("A request timed out.  You may need to re-start SDL core.");
+//						Message msg = Message.obtain(null, ClientMessages.SDL_DISCONNECTED);
+//						sendMessageToRegisteredClients(msg);
 					}
 				}
 			});
