@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:paddingLeft="20dip" 
+    android:paddingRight="20dip" 
+    android:layout_marginLeft="10dip" 
+    android:layout_marginRight="10dip" >
     
     <EditText
         android:id="@+id/et_text"
@@ -10,6 +14,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
+        android:layout_marginTop="50dip"
         android:ems="10"
         android:inputType="textCapWords"
         android:hint="@string/tts_text_hint" >
@@ -18,10 +23,46 @@
     </EditText>
         
     <Spinner 
-        android:id="@+id/spin_type" 
-        android:layout_below="@+id/et_text"
+        android:id="@+id/spin_jingles" 
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
         android:layout_width="fill_parent" 
-        android:layout_height="wrap_content">
-    </Spinner>
+        android:layout_height="wrap_content"
+        android:visibility="invisible"/>
+    
+    
+    <TextView android:id="@+id/tv_silence_header"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:visibility="invisible"
+        android:text="Amount of Silence"
+        style="@style/small_header_text"
+        />
+        
+    <SeekBar android:id="@+id/seek_speak_silence"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_silence_header"
+        android:visibility="invisible"
+        android:max="100"
+        />
+    
+    
+    <TextView android:id="@+id/tv_silence_text"
+        android:layout_below="@+id/seek_speak_silence"
+        android:visibility="invisible"
+        android:text="5.0 seconds"
+        style="@style/small_header_text"
+        />
+        
+    <Spinner 
+        android:id="@+id/spin_type"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/tv_silence_text"
+        android:layout_width="fill_parent" 
+        android:layout_height="wrap_content"/>
     
 </RelativeLayout>

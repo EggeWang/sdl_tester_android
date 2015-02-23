@@ -114,7 +114,6 @@ public class TtsListDialog extends BaseOkCancelDialog{
     }
     
     private void deleteItem(int position){
-     // TODO: test deletion of an item
         ttsItemList.remove(position);
         adapter.notifyDataSetChanged();
     }
@@ -132,7 +131,6 @@ public class TtsListDialog extends BaseOkCancelDialog{
     }
     
     private void addTtsChunkToList(TTSChunk chunk){
-        // TODO: test addition of an item
         ttsItemList.add(chunk);
         adapter.notifyDataSetChanged();
     }
