@@ -8,37 +8,56 @@
 
 <body>
 
-<h1>Alert</h1>
+<div class="page-header"><h1>Alert</h1></div>
 
 The Alert command allows developers to display a pop-up alert object on the head-unit UI.  The alert command has the ability to display 3 lines of text as well as speak a message to the driver.  Alerts are also able to play an alert sound as the pop-up appears.
 
 <p>
-To create an alert on the head-unit, 6 inputs are available:
+To create an alert on the head-unit, the following inputs are available:
 
 <p>
-<h2>Text to Speak (optional)</h2>
+<h2>Alert Lines 1-3 (at least 1 required)</h2>
 <h3>Type: String</h3>
-</br>
-The text to speak for an alert message will be spoken to the driver by the vehicle's text to speech engine.  This text should be a concise message telling the user what the alert is about. 
-
-<p>
-<h2>Alert Lines (at least 1 required)</h2>
-<h3>Type: String</h3>
+<h4>Max length: 500</h4>
 </br>
 Alert messages are permitted to have up to 3 lines of text to alert the user.  Alert messages should be concise and relevant to what the user is doing.
 
 <p>
-<h2>Alert Sound Enable (required)</h2>
-<h3>Type: Boolean</h3>
+<h2>Text to Speak (optional)</h2>
+<h3>Type: List&#60;TTSChunk&#62;</h3>
+<h4>Min array length: 1</h4>
+<h4>Max array length: 100</h4>
 </br>
-If your alert desires the vehicle's speakers to play an alert sound, set this value to true.  If no sound is desired, set this value to false.
+The text to speak for an alert message will be spoken to the driver by the vehicle's text to speech engine.  This text should be a concise message telling the user what the alert is about. 
 
 <p>
-<h2>Alert Duration (required)</h2>
+<h2>Alert Sound Enable (optional)</h2>
+<h3>Type: Boolean</h3>
+</br>
+If your alert desires the vehicle's speakers to play an alert sound, set this value to true.  If this value is omitted, it will be set to false.
+
+<p>
+<h2>Alert Duration (optional)</h2>
 <h3>Type: Integer</h3>
+<h4>Min value: 3000 (ms)</h4>
+<h4>Max value: 10000 (ms)</h4>
+<h4>Default value: 5000 (ms)</h4>
 </br>
 This value represents how long the alert should be displayed to the user.  The duration parameter is an integer representing how many milliseconds the alert should be displayed for.
+If this value is omitted, timeout will be set to 5 seconds.
 
+<p>
+<h2>Progress Indicator (optional)</h2>
+<h3>Type: Boolean</h3>
+</br>
+If supported on the given platform, the alert GUI will include some sort of animation indicating that loading of a feature is progressing.  e.g. a spinning wheel or hourglass, etc.
+If this value is omitted, it will be set to false.
+
+<p>
+<h2>Soft Buttons (optional)</h2>
+<h3>Type: List&#60;Soft Buttons&#62;</h3>
+</br>
+A list of software buttons to be displayed in a list alongside the alert dialog.  If the head-unit doesn't support soft buttons, this value is ignored.
 
 
 </body>

@@ -8,23 +8,32 @@
 
 <body>
 
-<h1>Add Submenu</h1>
+<div class="page-header"><h1>Add Submenu</h1></div>
 
 The AddSubmenu command allows developers to add a submenu object into the head-unit's main menu.  When the item on the head-unit is clicked, 
-the submenu's contents are displayed.  As of SDL 2.0, only 1 level of submenus are permitted.  In other words, submenus can only be added to 
+the submenu's contents are displayed.  Only 1 level of submenus are permitted; in other words, submenus can only be added to 
 the root-level main menu and only commands can be added to existing submenus.
 
 <p>
 Submenus that have been added to the system's main menu can be removed through the <a href="DeleteSubmenu.html">DeleteSubmenu</a> command.
 
 <p>
-An AddSubmenu command only requires a single input to create a submenu on the head-unit's main menu:
+An AddSubmenu command allows the following parameters to create a submenu on the head-unit's main menu:
 
 <p>
 <h2>Submenu Name (required)</h2>
 <h3>Type: String</h3>
 </br>
 The submenu name represents the text to display within the body of this submenu on the head-unit's main menu.  This text should be a short description of what this menu will display when clicked.
+
+<p>
+<h2>Menu ID (required)</h2>
+<h3>Type: ID (integer)</h3>
+<h4>Min value: 1</h4>
+<h4>Max value: 2,000,000,000</h4>
+</br>
+The menu ID represents a unique ID of the submenu in the menu.  Submenus appear on the top-level menu and when a submenu is clicked, 
+the HMI shows any commands that have been added to the submenu through the <a href="AddCommand.html">AddCommand</a> command.
 
 
 

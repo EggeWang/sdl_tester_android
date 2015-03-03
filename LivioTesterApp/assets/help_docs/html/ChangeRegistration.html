@@ -8,7 +8,7 @@
 
 <body>
 
-<h1>Change Registration</h1>
+<div class="page-header"><h1>Change Registration</h1></div>
 
 The ChangeRegistration command allows developers to change the language options on the connected head-unit.  There are two different types of language options available.  
 The "Language" input option changes the spoken language being used on the head-unit to speak to the driver while the "HMI Display Language" changes the textual display 
@@ -18,7 +18,7 @@ language being displayed on the head-unit's HMI.
 If the input fields match what is already being used by the head-unit, the request will be rejected.
 
 <p>
-To create an alert on the head-unit, 2 inputs are available:
+To create an alert on the head-unit, the following inputs are available:
 
 <p>
 <h2>Language (required)</h2>
@@ -33,7 +33,7 @@ Represents the language being spoken to the driver through the vehicle's text-to
 Represents the language being displayed on the head-unit's HMI.
 
 <h3>Available Language Options</h3>
-<table>
+<table class="table">
 <tr>
 <th>Enumerated Value</th>
 <th>Language</th>
@@ -160,6 +160,36 @@ Represents the language being displayed on the head-unit's HMI.
 </tr>
 
 </table>
+
+<h2>App Name (optional)</h2>
+<h3>Type: String</h3>
+<h4>Min length: 0</h4>
+<h4>Max length: 100</h4>
+</br>
+Changes the name the connected application registered with.
+
+<h2>Text-to-speak Name (optional)</h2>
+<h3>Type: List&#60;TTSChunk&#62;</h3>
+<h4>Min array size: 1</h4>
+<h4>Max array size: 100</h4>
+</br>
+The name to speak when application is selected within the system.
+
+<h2>NGN Media Screen Name (optional)</h2>
+<h3>Type: String</h3>
+<h4>Min length: 0</h4>
+<h4>Max length: 100</h4>
+</br>
+This parameter is a short version of the app name for screens that don't support scrolling text. This changes the short name the connected application registered with.
+If this parameter is omitted, the full app name will be truncated.
+
+<h2>Voice-Rec Synonyms (optional)</h2>
+<h3>Type: List&#60;String&#62;</h3>
+<h4>Min array size: 1</h4>
+<h4>Max array size: 100</h4>
+<h4>Max string length: 40</h4>
+</br>
+Other words that can be used to launch the application via voice recognition.
 
 
 </body>

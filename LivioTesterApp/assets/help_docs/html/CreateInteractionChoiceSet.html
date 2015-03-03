@@ -8,18 +8,36 @@
 
 <body>
 
-<h1>Create Interaction Choice Set</h1>
+<div class="page-header"><h1>Create Interaction Choice Set</h1></div>
 
 The Create Interaction Choice Set command allows developers to display a pop-up list of options for the user to select from on the head-unit.  Interaction choice 
 sets are created by creating the list of choices for the user to select from.  To display the interaction choice set, developers can utilize the <a href="PerformInteraction.html">PerformInteraction</a>
  command.
 
 <p>
-A choice can contain 3 parameters:
+This command can contain the following parameters:
 
 <p>
-<h2>Choice Name (required)</h2>
-<h3>Type: String</h3>
+<h2>Interaction Choice Set ID</h2>
+<h3>Type: ID (integer)</h3>
+<h4>Min value: 0</h4>
+<h4>Max value: 2,000,000,000</h4>
+</br>
+Unique ID used to represent the choice set.  This ID is used in <a href="PerformInteraction.html">PerformInteraction</a> to show the choice set to the user and in 
+<a href="DeleteInteractionChoiceSet.html">DeleteInteractionChoiceSet</a> to remove the choice set from the system.
+
+<p>
+<h2>Choice Set</h2>
+<h3>Type: List&#60;Choice&#62;</h3>
+<h4>Min size: 1</h4>
+<h4>Max size: 100</h4>
+</br>
+The choice set represents a list of choices to be displayed to the user.  A choice item can have the following parameters:
+
+<p>
+<h3>Choice Name (required)</h3>
+<h4>Type: String</h4>
+<h4>Max length: 500</h4>
 </br>
 The choice name represents the text to display within the body of this choice on the pop-up list.  This text should be a short description of what this button will do when clicked. 
 

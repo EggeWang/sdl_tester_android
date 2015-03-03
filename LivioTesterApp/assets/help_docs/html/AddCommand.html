@@ -8,33 +8,68 @@
 
 <body>
 
-<h1>Add Command</h1>
+<div class="page-header"><h1>Add Command</h1></div>
 
 The AddCommand command allows developers to add a command object into the head-unit's main menu.  When the item on the head-unit is clicked, 
 the click event is dispatched through the onOnCommand callback in the SDLService.  From there, it can be dispatched to the appropriate click-listener 
 based on the clicked item's ID.
 
 <p>
+<b>Either menu parameters or VR commands must be included or the message will be rejected.</b>
+
+<p>
 There are 4 available settings to create a command in the head-unit's main menu:
 
 <p>
-<h2>Command Name (required)</h2>
-<h3>Type: String</h3>
+<h2>Command ID (required)</h2>
+<h3>Type: ID (integer)</h3>
+<h4>Min value: 0</h4>
+<h4>Max value: 2,000,000,000</h4>
 </br>
-The command name represents the text to display within the body of this command on the head-unit's main menu.  This text should be a short description of what this button will do when clicked.
+The command ID represents a unique ID of the command in the menu.  When this command is clicked, a callback to onOnCommand() will be issued
+with an ID of the button that was clicked.  This ID should be used to dispatch click events to the correct handler.  
+
+<p>
+<h2>Menu Parameters (optional)</h2>
+<h3>Type: MenuParams</h3>
+</br>
+The menu parameters tell the system about where this command will be located in the menu and how to display it.  
+<b>If menu parameters are omitted, VR commands are required.</b>
+
+<p>
+Menu parameters include the ID of the command's parent menu,
+the position of the command in the list and a command name, representing the text to display within the body of the command on the head-unit's main menu.
+
+<h3>Command Name</h3>
+The command's name represents the text to show in the menu item.
+
+<h3>Parent ID</h3>
+<h4>Min value: 0</h4>
+<h4>Max value: 2,000,000,000</h4>
+The command's parent ID represents which SubMenu, if applicable, this command should be added to.  Commands can be added to the root-level of the head-unit's main menu, 
+or, if a submenu has been added to the head-unit's main menu, 
+commands can be added into the submenu as well.  For more information, see <a href="AddSubmenu.html">AddSubmenu</a>.
+
+<p>
+If the command is a top-level command, parent ID should be omitted.
+
+<h3>Position</h3>
+<h4>Min value: 0</h4>
+<h4>Max value: 1,000</h4>
+The command's position represents it's location in the head-unit's menu list.  If the command should be added to the end of the list, position should be omitted.
 
 <p>
 <h2>Voice Recognition Keyword(s) (optional)</h2>
-<h3>Type: Comma-separated String</h3>
+<h3>Type: List<String></h3>
+<h4>Min array size: 1</h4>
+<h4>Max array size: 100</h4>
+<h4>Max string length (per string): 99</h4>
 </br>
-The voice recognition keyword input tells the vehicle what keywords are linked to this particular command when spoken through the vehicle's voice system.
+The voice recognition keyword input tells the vehicle what keywords are linked to this particular command when spoken through the vehicle's voice system.  If this parameter
+is provided, it cannot be empty or null.
 
 <p>
-<h2>Parent ID (required)</h2>
-<h3>Type: ID (integer)</h3>
-</br>
-The parent id represents where this command should be added.  Commands can be added to the root-level of the head-unit's main menu, or, if a submenu has been added to the head-unit's main menu, 
-commands can be added into the submenu as well.  For more information, see <a href="AddSubmenu.html">AddSubmenu</a>.
+<b>If VR commands are omitted, menu parameters are required.</b>
 
 <p>
 <h2>Image (optional)</h2>
@@ -42,6 +77,9 @@ commands can be added into the submenu as well.  For more information, see <a hr
 </br>
 The image for a particular command represents an image to be displayed alongside the command name within the body of this command on the head-unit's main menu.  Images must have been added 
 to the system through the <a href="PutFile.html">PutFile</a> command before they can be referenced for an AddCommand.
+
+<p>
+If the Image parameter is omitted, either a placeholder image will be displayed, or only the command name will be displayed.
 
 
 
