@@ -19,14 +19,20 @@ retrieve.
 <p>
 <h2>ECU ID (required)</h2>
 <h3>Type: ID (integer)</h3>
+<h4>Min value: 0</h4>
+<h4>Max value: 65,535</h4>
 </br>
-The CAN bus ID of the module to read DIDs from.  Valid ECU IDs range from 0 to 65535.
+The CAN bus ID of the module to read DIDs from.
 
 <p>
 <h2>DID ID (required)</h2>
-<h3>Type: ID (integer)</h3>
+<h3>Type: List&#60;Integer&#62;</h3>
+<h4>Min array size: 1</h4>
+<h4>Max array size: 1,000</h4>
+<h4>Min value: 0</h4>
+<h4>Max value: 65,535</h4>
 </br>
-The DID ID for the module to read DIDs from.  Valid DID IDs range from 0 to 65535.
+The DID ID for the module to read DIDs from.
 
 
 

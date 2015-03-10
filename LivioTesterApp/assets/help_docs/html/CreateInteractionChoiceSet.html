@@ -35,15 +35,40 @@ Unique ID used to represent the choice set.  This ID is used in <a href="Perform
 The choice set represents a list of choices to be displayed to the user.  A choice item can have the following parameters:
 
 <p>
-<h3>Choice Name (required)</h3>
+<h3>Choice ID (required)</h3>
+<h4>Type: ID (integer)</h4>
+<h4>Min value:0</h4>
+<h4>Max value:65,535</h4>
+</br>
+A unique ID representing this choice item.
+
+<p>
+<h3>Menu Name (required)</h3>
 <h4>Type: String</h4>
 <h4>Max length: 500</h4>
 </br>
 The choice name represents the text to display within the body of this choice on the pop-up list.  This text should be a short description of what this button will do when clicked. 
 
 <p>
+<h3>Secondary Text (optional)</h3>
+<h4>Type: String</h4>
+<h4>Max length: 500</h4>
+</br>
+An optional second line of text. 
+
+<p>
+<h3>Tertiary Text (optional)</h3>
+<h4>Type: String</h4>
+<h4>Max length: 500</h4>
+</br>
+An optional third line of text.  
+
+<p>
 <h2>Voice Recognition Keyword(s) (required)</h2>
-<h3>Type: Comma-separated String</h3>
+<h3>Type: List&#60;String&#62;</h3>
+<h4>Min array length: 1</h4>
+<h4>Max array length: 100</h4>
+<h4>Max string length: 99</h4>
 </br>
 The voice recognition keyword input tells the vehicle what keywords are linked to this particular choice when spoken through the vehicle's voice system.
 
@@ -53,6 +78,12 @@ The voice recognition keyword input tells the vehicle what keywords are linked t
 </br>
 The image for a particular choice represents an image to be displayed alongside the choice name within the body of this choice on the pop-up menu.  Images must have been added to the system 
 through the <a href="PutFile.html">PutFile</a> command before they can be referenced for a choice.
+
+<p>
+<h2>Secondary Image (optional)</h2>
+<h3>Type: Image</h3>
+</br>
+An optional second image.
 
 
 

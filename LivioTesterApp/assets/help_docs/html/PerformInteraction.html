@@ -18,27 +18,15 @@ dispatched to the appropriate click-listener based on the id that was selected. 
 The PerformInteraction command has capabilities for the following parameters:
 
 <p>
-<h2>Interaction Title (required)</h2>
+<h2>Initial Text (required)</h2>
 <h3>Type: String</h3>
+<h4>Max length: 500</h4>
 </br>
-The interaction title will show above the choices in the pop-up dialog.  This should be a concise description of what the pop-up is asking for.
-
-<p>
-<h2>Interaction Voice Prompt (optional)</h2>
-<h3>Type: Comma-separated string</h3>
-</br>
-The interaction voice prompt parameter will speak the input text to the user when the pop-up dialog shows.
-
-<p>
-<h2>Choice Set Ids (required)</h2>
-<h3>Type: Vector of IDs (integers)</h3>
-</br>
-In order to perform an interaction with the user, the developer must select a set of choice set IDs that have been added to the system using the 
-<a href="CreateInteractionChoiceSet.html">CreateInteractionChoiceSet</a> command.
+The interaction title that will show above the choices in the pop-up dialog.  This should be a concise description of what the pop-up is asking for.
 
 <p>
 <h2>Interaction Mode (required)</h2>
-<h3>Type: Enumerated Value</h3>
+<h3>Type: InteractionMode enum</h3>
 </br>
 The interaction mode parameter specifies how the user can perform the interaction.
 
@@ -67,17 +55,64 @@ The interaction mode parameter specifies how the user can perform the interactio
 </table>
 
 <p>
-<h2>Interaction Timeout Enable (required)</h2>
-<h3>Type: Boolean</h3>
+<h2>Choice Set IDs (required)</h2>
+<h3>Type: List&#60;Integer&#62;</h3>
+<h4>Min array size: 1</h4>
+<h4>Max array size: 100</h4>
+<h4>Min value: 0</h4>
+<h4>Max value: 2,000,000,000</h4>
 </br>
-Specifies whether or not the pop-up dialog should time-out after a certain number of time or not.  If this value is set to false, the pop-up will remain on the screen
-indefinitely - until the app is disconnected or until the user navigates away from it.
+In order to perform an interaction with the user, the developer must select a set of choice set IDs that have been added to the system using the 
+<a href="CreateInteractionChoiceSet.html">CreateInteractionChoiceSet</a> command.
 
 <p>
 <h2>Interaction Timeout (optional)</h2>
 <h3>Type: Integer</h3>
+<h4>Min value: 5,000 (ms)</h4>
+<h4>Max value: 10,000 (ms)</h4>
+<h4>Default value: 10,000 (ms)</h4>
 </br>
 This value represents how long the pop-up should be displayed to the user.  The duration parameter is an integer representing how many milliseconds the pop-up should be displayed for.
+If this value is omitted, the pop-up will remain on the screen
+indefinitely - until the app is disconnected or until the user navigates away from it.
+
+<p>
+<h2>Initial Prompt (optional)</h2>
+<h3>Type: List&#60;TTSChunk&#62;</h3>
+<h4>Min array size: 1</h4>
+<h4>Max array size: 100</h4>
+</br>
+The interaction voice prompt that will speak the input text to the user when the pop-up dialog shows.
+
+<p>
+<h2>Help Prompt (optional)</h2>
+<h3>Type: List&#60;TTSChunk&#62;</h3>
+<h4>Min array size: 1</h4>
+<h4>Max array size: 100</h4>
+</br>
+The help voice prompt that will speak the input text to the user when the user asks for help while the app is open.
+
+<p>
+<h2>Timeout Prompt (optional)</h2>
+<h3>Type: List&#60;TTSChunk&#62;</h3>
+<h4>Min array size: 1</h4>
+<h4>Max array size: 100</h4>
+</br>
+The interaction voice prompt that will speak the input text to the user when the pop-up dialog times out.
+
+<p>
+<h2>Voice-Rec Help (optional)</h2>
+<h3>Type: List&#60;VrHelpItem&#62;</h3>
+<h4>Min array size: 1</h4>
+<h4>Max array size: 100</h4>
+</br>
+A list of suggestions to help the user navigate the interaction through voice control.
+
+<p>
+<h2>Interaction Layout (optional)</h2>
+<h3>Type: String</h3>
+</br>
+Specifies a different type of layout for the specified interaction.
 
 
 </body>

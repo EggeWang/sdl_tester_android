@@ -53,7 +53,7 @@ The timer mode represents what the timer should do when this command is received
 
 <tr>
 <td>CLEAR</td>
-<td>The timer should pause and reset to 00:00:00.  Input start time will be ignored.</td>
+<td>The timer should pause and reset to 00:00:00.  Input start and end times will be ignored.</td>
 </tr>
 
 </table>
@@ -64,6 +64,12 @@ The timer mode represents what the timer should do when this command is received
 </br>
 This object represents a start time with hours, minutes and seconds as parameters.  The start time is mandatory for
 COUNT_UP and COUNT_DOWN timer modes, but optional for other timer modes.
+
+<p>
+<h2>End Time (optional)</h2>
+<h3>Type: StartTime</h3>
+</br>
+This object represents an end time with hours, minutes and seconds as parameters.
 
 
 </body>

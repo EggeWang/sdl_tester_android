@@ -18,8 +18,18 @@ In order to retrieve DTCs from a particular module, the application must know th
 <p>
 <h2>ECU ID (required)</h2>
 <h3>Type: ID (integer)</h3>
+<h4>Min value: 0</h4>
+<h4>Max value: 65,535</h4>
 </br>
-The CAN bus ID of the module to read DTCs from.  Valid ECU IDs range from 0 to 65535.
+The CAN bus ID of the module to read DTCs from.
+
+<p>
+<h2>DTC Mask (optional)</h2>
+<h3>Type: Integer</h3>
+<h4>Min value: 0</h4>
+<h4>Max value: 255</h4>
+</br>
+The DTC mask byte, which allows filtering of results to retrieve current DTC status, history status, etc.
 
 
 
