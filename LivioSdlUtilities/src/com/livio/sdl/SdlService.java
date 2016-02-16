@@ -27,12 +27,15 @@ import com.smartdevicelink.protocol.enums.FunctionID;
 import com.smartdevicelink.proxy.RPCMessage;
 import com.smartdevicelink.proxy.RPCRequest;
 import com.smartdevicelink.proxy.SdlProxyALM;
+import com.smartdevicelink.proxy.callbacks.OnServiceEnded;
+import com.smartdevicelink.proxy.callbacks.OnServiceNACKed;
 import com.smartdevicelink.proxy.interfaces.IProxyListenerALM;
 import com.smartdevicelink.proxy.rpc.AddCommand;
 import com.smartdevicelink.proxy.rpc.AddCommandResponse;
 import com.smartdevicelink.proxy.rpc.AddSubMenu;
 import com.smartdevicelink.proxy.rpc.AddSubMenuResponse;
 import com.smartdevicelink.proxy.rpc.Alert;
+import com.smartdevicelink.proxy.rpc.AlertManeuverResponse;
 import com.smartdevicelink.proxy.rpc.AlertResponse;
 import com.smartdevicelink.proxy.rpc.ChangeRegistrationResponse;
 import com.smartdevicelink.proxy.rpc.Choice;
@@ -47,6 +50,7 @@ import com.smartdevicelink.proxy.rpc.DeleteInteractionChoiceSetResponse;
 import com.smartdevicelink.proxy.rpc.DeleteSubMenu;
 import com.smartdevicelink.proxy.rpc.DeleteSubMenuResponse;
 import com.smartdevicelink.proxy.rpc.DiagnosticMessageResponse;
+import com.smartdevicelink.proxy.rpc.DialNumberResponse;
 import com.smartdevicelink.proxy.rpc.EndAudioPassThruResponse;
 import com.smartdevicelink.proxy.rpc.GenericResponse;
 import com.smartdevicelink.proxy.rpc.GetDTCsResponse;
@@ -63,6 +67,7 @@ import com.smartdevicelink.proxy.rpc.OnKeyboardInput;
 import com.smartdevicelink.proxy.rpc.OnLanguageChange;
 import com.smartdevicelink.proxy.rpc.OnLockScreenStatus;
 import com.smartdevicelink.proxy.rpc.OnPermissionsChange;
+import com.smartdevicelink.proxy.rpc.OnStreamRPC;
 import com.smartdevicelink.proxy.rpc.OnSystemRequest;
 import com.smartdevicelink.proxy.rpc.OnTBTClientState;
 import com.smartdevicelink.proxy.rpc.OnTouchEvent;
@@ -76,15 +81,18 @@ import com.smartdevicelink.proxy.rpc.ReadDIDResponse;
 import com.smartdevicelink.proxy.rpc.ResetGlobalPropertiesResponse;
 import com.smartdevicelink.proxy.rpc.ScrollableMessage;
 import com.smartdevicelink.proxy.rpc.ScrollableMessageResponse;
+import com.smartdevicelink.proxy.rpc.SendLocationResponse;
 import com.smartdevicelink.proxy.rpc.SetAppIconResponse;
 import com.smartdevicelink.proxy.rpc.SetDisplayLayoutResponse;
 import com.smartdevicelink.proxy.rpc.SetGlobalPropertiesResponse;
 import com.smartdevicelink.proxy.rpc.SetMediaClockTimerResponse;
 import com.smartdevicelink.proxy.rpc.Show;
+import com.smartdevicelink.proxy.rpc.ShowConstantTbtResponse;
 import com.smartdevicelink.proxy.rpc.ShowResponse;
 import com.smartdevicelink.proxy.rpc.SliderResponse;
 import com.smartdevicelink.proxy.rpc.SoftButton;
 import com.smartdevicelink.proxy.rpc.SpeakResponse;
+import com.smartdevicelink.proxy.rpc.StreamRPCResponse;
 import com.smartdevicelink.proxy.rpc.SubscribeButton;
 import com.smartdevicelink.proxy.rpc.SubscribeButtonResponse;
 import com.smartdevicelink.proxy.rpc.SubscribeVehicleDataResponse;
@@ -92,6 +100,7 @@ import com.smartdevicelink.proxy.rpc.SystemRequestResponse;
 import com.smartdevicelink.proxy.rpc.UnsubscribeButton;
 import com.smartdevicelink.proxy.rpc.UnsubscribeButtonResponse;
 import com.smartdevicelink.proxy.rpc.UnsubscribeVehicleDataResponse;
+import com.smartdevicelink.proxy.rpc.UpdateTurnListResponse;
 import com.smartdevicelink.proxy.rpc.enums.ButtonName;
 import com.smartdevicelink.proxy.rpc.enums.HMILevel;
 import com.smartdevicelink.proxy.rpc.enums.Language;
@@ -1230,4 +1239,64 @@ public class SdlService extends Service implements IProxyListenerALM{
         // TODO Auto-generated method stub
         
     }
+
+	@Override
+	public void onServiceEnded(OnServiceEnded serviceEnded) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onServiceNACKed(OnServiceNACKed serviceNACKed) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onOnStreamRPC(OnStreamRPC notification) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onStreamRPCResponse(StreamRPCResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onDialNumberResponse(DialNumberResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onSendLocationResponse(SendLocationResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onShowConstantTbtResponse(ShowConstantTbtResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onAlertManeuverResponse(AlertManeuverResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onUpdateTurnListResponse(UpdateTurnListResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onServiceDataACK() {
+		// TODO Auto-generated method stub
+		
+	}
 }
